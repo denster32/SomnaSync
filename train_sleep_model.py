@@ -10,6 +10,7 @@ import create_ml as cm
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import json
+import pickle
 import os
 
 def generate_synthetic_sleep_data(n_samples=10000):
@@ -88,32 +89,32 @@ def generate_synthetic_sleep_data(n_samples=10000):
     return pd.DataFrame(data)
 
 def create_ml_training_data(df):
-    """
-    Prepare data for Create ML training
-    """
-    # Feature columns
-    feature_columns = ['heartRate', 'hrv', 'movement', 'bloodOxygen', 
-                      'temperature', 'breathingRate', 'timeOfNight', 'previousStage']
-    
-    # Target column
+    """Prepare data for Create ML training with feature scaling."""
+    feature_columns = [
+        'heartRate', 'hrv', 'movement', 'bloodOxygen',
+        'temperature', 'breathingRate', 'timeOfNight', 'previousStage'
+    ]
+
     target_column = 'stage'
-    
-    # Split data
+
     X = df[feature_columns]
     y = df[target_column]
-    
+
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42, stratify=y
     )
-    
-    # Create training and testing DataFrames
-    train_df = X_train.copy()
-    train_df['stage'] = y_train
-    
-    test_df = X_test.copy()
-    test_df['stage'] = y_test
-    
-    return train_df, test_df
+
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
+
+    train_df = pd.DataFrame(X_train_scaled, columns=feature_columns)
+    train_df['stage'] = y_train.reset_index(drop=True)
+
+    test_df = pd.DataFrame(X_test_scaled, columns=feature_columns)
+    test_df['stage'] = y_test.reset_index(drop=True)
+
+    return train_df, test_df, scaler
 
 def train_core_ml_model(train_data, test_data, output_path):
     """
@@ -223,7 +224,7 @@ def main():
     
     # Prepare data for training
     print("🔧 Preparing training data...")
-    train_data, test_data = create_ml_training_data(sleep_data)
+    train_data, test_data, scaler = create_ml_training_data(sleep_data)
     
     # Train the model
     model_path = os.path.join(output_dir, "SleepStagePredictor.mlmodel")
@@ -235,8 +236,14 @@ def main():
     
     with open(metadata_path, 'w') as f:
         json.dump(metadata, f, indent=2)
-    
+
+    # Save the scaler for preprocessing new data
+    scaler_path = os.path.join(output_dir, "feature_scaler.pkl")
+    with open(scaler_path, 'wb') as f:
+        pickle.dump(scaler, f)
+
     print(f"📋 Model metadata saved to: {metadata_path}")
+    print(f"📋 Feature scaler saved to: {scaler_path}")
     
     # Print summary
     print("\n🎉 Training Complete!")
@@ -244,7 +251,7 @@ def main():
     print(f"📁 Metadata: {metadata_path}")
     print(f"📊 Accuracy: {evaluation['accuracy']:.3f}")
     
-    return model, evaluation
+    return model, evaluation, scaler
 
 if __name__ == "__main__":
-    main() 
+    main()
