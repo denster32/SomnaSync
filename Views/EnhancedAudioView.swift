@@ -10,7 +10,7 @@ struct EnhancedAudioView: View {
     @State private var customLayers: [AudioLayer] = []
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
                     // MARK: - Audio Visualization
@@ -465,7 +465,7 @@ struct LayerEditorView: View {
     @State private var selectedLayerType: AudioLayerType = .binauralBeats
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 20) {
                 // Layer Type Selection
                 VStack(alignment: .leading, spacing: 8) {

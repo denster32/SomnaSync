@@ -21,7 +21,7 @@ struct EnhancedSleepView: View {
     @State private var isLoading = true
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 // Background
                 LinearGradient(
@@ -556,7 +556,7 @@ struct WindDownView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 24) {
                 if windDownManager.isWindDownActive {
                     WindDownActiveView(windDownManager: windDownManager)

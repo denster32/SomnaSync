@@ -50,7 +50,7 @@ struct SleepView: View {
     @State private var analysisProgress: Double = 0.0
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
                     // Header with sleep score
@@ -1071,7 +1071,7 @@ struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section("Sleep Settings") {
                     Text("Sleep preferences and configuration")
@@ -1335,7 +1335,7 @@ struct AudioControlsView: View {
     @State private var ambientGenre: AmbientGenre = .atmospheric
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
                     // Pre-Sleep Audio Section
@@ -1931,7 +1931,7 @@ struct AudioSettingsView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section("Audio Quality") {
                     Toggle("Spatial Audio", isOn: $audioEngine.spatialAudioEnabled)
@@ -2460,7 +2460,7 @@ struct SleepSessionView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Text("Sleep Session View")
                     .font(.title)
@@ -2486,7 +2486,7 @@ struct AppleWatchSetupView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Text("Apple Watch Setup")
                     .font(.title)
