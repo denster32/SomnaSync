@@ -14,10 +14,11 @@ struct OnboardingView: View {
     @State private var dataPointsCount = 0
     @State private var isAnimating = false
     
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     private let totalSteps = 4
-    
+
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 // Background gradient
                 LinearGradient(
@@ -122,15 +123,16 @@ struct OnboardingView: View {
                     .multilineTextAlignment(.center)
                     .somnaPulse(duration: 3.5, scale: 1.02)
                 
-                VStack(alignment: .leading, spacing: 15) {
-                    FeatureRow(icon: "brain.head.profile", title: "AI Sleep Analysis", description: "Advanced machine learning for personalized sleep insights")
-                        .somnaPulse(duration: 2.0, scale: 1.01)
-                    FeatureRow(icon: "waveform.path.ecg", title: "HealthKit Integration", description: "Seamless integration with Apple Health data")
-                        .somnaPulse(duration: 2.2, scale: 1.01)
-                    FeatureRow(icon: "speaker.wave.3", title: "Smart Audio", description: "Adaptive audio generation for optimal sleep")
-                        .somnaPulse(duration: 2.4, scale: 1.01)
-                    FeatureRow(icon: "alarm", title: "Smart Alarms", description: "Wake up at the perfect time in your sleep cycle")
-                        .somnaPulse(duration: 2.6, scale: 1.01)
+                Group {
+                    if horizontalSizeClass == .regular {
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 250))], spacing: 15) {
+                            featureRows
+                        }
+                    } else {
+                        VStack(alignment: .leading, spacing: 15) {
+                            featureRows
+                        }
+                    }
                 }
                 .padding(.top)
                 .somnaShimmer()
@@ -308,18 +310,45 @@ struct OnboardingView: View {
                     .multilineTextAlignment(.center)
                     .somnaShimmer()
                 
-                VStack(alignment: .leading, spacing: 15) {
-                    FeatureRow(icon: "moon.stars.fill", title: "Sleep Tracking", description: "Advanced sleep stage analysis")
-                        .somnaPulse(duration: 2.0, scale: 1.01)
-                    FeatureRow(icon: "speaker.wave.3", title: "Smart Audio", description: "Personalized sleep sounds")
-                        .somnaPulse(duration: 2.2, scale: 1.01)
-                    FeatureRow(icon: "alarm", title: "Smart Alarms", description: "Optimal wake-up timing")
-                        .somnaPulse(duration: 2.4, scale: 1.01)
-                    FeatureRow(icon: "chart.line.uptrend.xyaxis", title: "AI Insights", description: "Personalized recommendations")
-                        .somnaPulse(duration: 2.6, scale: 1.01)
+                Group {
+                    if horizontalSizeClass == .regular {
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 250))], spacing: 15) {
+                            finalFeatureRows
+                        }
+                    } else {
+                        VStack(alignment: .leading, spacing: 15) {
+                            finalFeatureRows
+                        }
+                    }
                 }
                 .padding(.top)
             }
+        }
+    }
+
+    private var featureRows: some View {
+        Group {
+            FeatureRow(icon: "brain.head.profile", title: "AI Sleep Analysis", description: "Advanced machine learning for personalized sleep insights")
+                .somnaPulse(duration: 2.0, scale: 1.01)
+            FeatureRow(icon: "waveform.path.ecg", title: "HealthKit Integration", description: "Seamless integration with Apple Health data")
+                .somnaPulse(duration: 2.2, scale: 1.01)
+            FeatureRow(icon: "speaker.wave.3", title: "Smart Audio", description: "Adaptive audio generation for optimal sleep")
+                .somnaPulse(duration: 2.4, scale: 1.01)
+            FeatureRow(icon: "alarm", title: "Smart Alarms", description: "Wake up at the perfect time in your sleep cycle")
+                .somnaPulse(duration: 2.6, scale: 1.01)
+        }
+    }
+
+    private var finalFeatureRows: some View {
+        Group {
+            FeatureRow(icon: "moon.stars.fill", title: "Sleep Tracking", description: "Advanced sleep stage analysis")
+                .somnaPulse(duration: 2.0, scale: 1.01)
+            FeatureRow(icon: "speaker.wave.3", title: "Smart Audio", description: "Personalized sleep sounds")
+                .somnaPulse(duration: 2.2, scale: 1.01)
+            FeatureRow(icon: "alarm", title: "Smart Alarms", description: "Optimal wake-up timing")
+                .somnaPulse(duration: 2.4, scale: 1.01)
+            FeatureRow(icon: "chart.line.uptrend.xyaxis", title: "AI Insights", description: "Personalized recommendations")
+                .somnaPulse(duration: 2.6, scale: 1.01)
         }
     }
     
