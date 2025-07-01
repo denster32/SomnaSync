@@ -5,7 +5,7 @@
 | Agent1 | Performance Profiling    | Managers, Utilities    |
 | Agent2 | iOS 26 API Audit         | All modules            |
 | Agent3 | iPad/Watch UI Adaptation | Views, WatchKit        |
-| Agent4 | Test Coverage Expansion  | Tests, All modules     |
+| Agent4 | Test Coverage Expansion (claimed) | Tests, All modules     |
 
 ## Actionable Instructions (Spring 2024 Release)
 
