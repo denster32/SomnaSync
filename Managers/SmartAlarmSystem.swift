@@ -1207,15 +1207,15 @@ class BiometricMonitor {
         }
     }
     
-    private func calculateLinearTrend(_ values: [Double]) -> Double {
+    private func calculateLinearTrend<T: BinaryFloatingPoint>(_ values: [T]) -> Double {
         let n = Double(values.count)
-        let indices = Array(0..<values.count).map { Double($0) }
-        
+        let indices = (0..<values.count).map { Double($0) }
+
         let sumX = indices.reduce(0, +)
-        let sumY = values.reduce(0, +)
-        let sumXY = zip(indices, values).map(*).reduce(0, +)
+        let sumY = values.reduce(0) { $0 + Double($1) }
+        let sumXY = zip(indices, values).map { $0 * Double($1) }.reduce(0, +)
         let sumX2 = indices.map { $0 * $0 }.reduce(0, +)
-        
+
         let slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX)
         return slope
     }
@@ -1238,19 +1238,19 @@ class BiometricMonitor {
         return correlations
     }
     
-    private func calculateCorrelation(_ x: [Double], _ y: [Double]) -> Float {
+    private func calculateCorrelation<T: BinaryFloatingPoint>(_ x: [T], _ y: [T]) -> Float {
         guard x.count == y.count && x.count > 1 else { return 0.0 }
-        
+
         let n = Double(x.count)
-        let sumX = x.reduce(0, +)
-        let sumY = y.reduce(0, +)
-        let sumXY = zip(x, y).map(*).reduce(0, +)
-        let sumX2 = x.map { $0 * $0 }.reduce(0, +)
-        let sumY2 = y.map { $0 * $0 }.reduce(0, +)
-        
+        let sumX = x.reduce(0) { $0 + Double($1) }
+        let sumY = y.reduce(0) { $0 + Double($1) }
+        let sumXY = zip(x, y).map { Double($0) * Double($1) }.reduce(0, +)
+        let sumX2 = x.map { Double($0) * Double($0) }.reduce(0, +)
+        let sumY2 = y.map { Double($0) * Double($0) }.reduce(0, +)
+
         let numerator = n * sumXY - sumX * sumY
         let denominator = sqrt((n * sumX2 - sumX * sumX) * (n * sumY2 - sumY * sumY))
-        
+
         return denominator != 0 ? Float(numerator / denominator) : 0.0
     }
     
