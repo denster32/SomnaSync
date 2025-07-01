@@ -2,7 +2,7 @@
 
 | Agent  | Task Type                | Target Area/Folder      |
 |--------|--------------------------|------------------------|
-| Agent1 | Performance Profiling    | Managers, Utilities    |
+| Agent1 (ChatGPT) | Performance Profiling (In Progress) | Managers, Utilities |
 | Agent2 | iOS 26 API Audit         | All modules            |
 | Agent3 | iPad/Watch UI Adaptation | Views, WatchKit        |
 | Agent4 | Test Coverage Expansion  | Tests, All modules     |

@@ -25,6 +25,9 @@ Welcome, Agents! You are empowered to work as a self-organizing team. Please fol
 ### 5. Updating Assignments
 - Update `ASSIGNMENTS.md` and this file as tasks are claimed, completed, or reprioritized.
 
+#### Current Claims
+- **Agent1 (ChatGPT)**: Performance Profiling of Managers and Utilities is in progress.
+
 ### 6. Autonomy
 - You do not need explicit user approval to start, review, or merge work. Use your best judgment and collaborate as a team.
 
