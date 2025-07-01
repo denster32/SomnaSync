@@ -149,17 +149,17 @@ import os.log
         return insights
     }
     
-    private func calculateLinearTrend(_ values: [Double]) -> Double {
+    private func calculateLinearTrend<T: BinaryFloatingPoint>(_ values: [T]) -> Double {
         guard values.count > 1 else { return 0.0 }
-        
+
         let n = Double(values.count)
-        let indices = Array(0..<values.count).map { Double($0) }
-        
+        let indices = (0..<values.count).map { Double($0) }
+
         let sumX = indices.reduce(0, +)
-        let sumY = values.reduce(0, +)
-        let sumXY = zip(indices, values).map(*).reduce(0, +)
+        let sumY = values.reduce(0) { $0 + Double($1) }
+        let sumXY = zip(indices, values).map { $0 * Double($1) }.reduce(0, +)
         let sumX2 = indices.map { $0 * $0 }.reduce(0, +)
-        
+
         let slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX)
         return slope
     }
