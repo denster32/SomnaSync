@@ -61,28 +61,34 @@ SomnaSync Pro is now a fully functional, production-ready iOS sleep optimization
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/SomnaSync-Pro-Xcode-Complete.git
+   git clone https://github.com/<your-github-username>/SomnaSync.git
+   cd SomnaSync
+   ```
+
+2. **Unzip the project files**
+   ```bash
+   unzip SomnaSync-Pro-Xcode-Complete.zip
    cd SomnaSync-Pro-Xcode-Complete
    ```
 
-2. **Open in Xcode**
+3. **Open in Xcode**
    ```bash
    open SomnaSync.xcodeproj
    ```
 
-3. **Configure Bundle Identifiers**
+4. **Configure Bundle Identifiers**
    - Update bundle identifiers in project settings
    - Configure team and provisioning profiles
    - Set up Apple Developer account for HealthKit capabilities
 
-4. **Train the ML Model** (Optional)
+5. **Train the ML Model** (Optional)
    ```bash
    cd SomnaSync/ML
    python3 train_sleep_model.py
    ```
    - Copy the generated `SleepStagePredictor.mlmodel` to the ML folder in Xcode
 
-5. **Build and Run**
+6. **Build and Run**
    - Select your target device
    - Build and run the project
    - Grant necessary permissions when prompted
