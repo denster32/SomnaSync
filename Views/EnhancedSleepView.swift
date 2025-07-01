@@ -263,6 +263,16 @@ struct QuickActionsSection: View {
     @Binding var showingWindDown: Bool
     @Binding var showingAudioControls: Bool
     @State private var isAnimating = false
+
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    private var columns: [GridItem] {
+        if horizontalSizeClass == .regular {
+            [GridItem(.adaptive(minimum: 160), spacing: 12)]
+        } else {
+            Array(repeating: GridItem(.flexible(), spacing: 12), count: 2)
+        }
+    }
     
     var body: some View {
         VStack(spacing: 16) {
@@ -275,7 +285,7 @@ struct QuickActionsSection: View {
                 Spacer()
             }
             
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 12), count: 2), spacing: 12) {
+            LazyVGrid(columns: columns, spacing: 12) {
                 QuickActionCard(
                     title: sleepManager.isSleeping ? "End Sleep" : "Start Sleep",
                     subtitle: sleepManager.isSleeping ? "Stop tracking" : "Begin session",

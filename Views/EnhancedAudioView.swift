@@ -9,6 +9,16 @@ struct EnhancedAudioView: View {
     @State private var showingAudioVisualization = false
     @State private var customLayers: [AudioLayer] = []
     
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    private var gridColumns: [GridItem] {
+        if horizontalSizeClass == .regular {
+            [GridItem(.adaptive(minimum: 160))]
+        } else {
+            Array(repeating: GridItem(.flexible()), count: 2)
+        }
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -136,7 +146,7 @@ struct EnhancedAudioControlsView: View {
                     .font(.subheadline)
                     .fontWeight(.medium)
                 
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: 8) {
+                LazyVGrid(columns: gridColumns, spacing: 8) {
                     AudioTypeButton(title: "Binaural Beats", icon: "waveform.path", action: {
                         Task {
                             await audioEngine.generatePreSleepAudio(type: .binauralBeats(4.0))
@@ -169,7 +179,7 @@ struct EnhancedAudioControlsView: View {
                     .font(.subheadline)
                     .fontWeight(.medium)
                 
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: 8) {
+                LazyVGrid(columns: gridColumns, spacing: 8) {
                     AudioTypeButton(title: "Deep Sleep", icon: "moon.fill", action: {
                         Task {
                             await audioEngine.generateSleepAudio(type: .deepSleep(2.0))
