@@ -1,8 +1,8 @@
 # SomnaSync Pro - Complete iOS Sleep Optimization App
 
-## 🎉 **100% FUNCTIONAL - ALL FEATURES IMPLEMENTED**
+## Overview
 
-SomnaSync Pro is now a fully functional, production-ready iOS sleep optimization app with advanced AI/ML capabilities, comprehensive Apple Watch integration, and real-time sleep cycle prediction.
+SomnaSync Pro aims to provide an advanced sleep optimization experience with AI/ML capabilities, Apple Watch integration, and real-time sleep cycle prediction. Several components remain under active development.
 
 ## ✨ **Complete Feature Set**
 
@@ -51,8 +51,8 @@ SomnaSync Pro is now a fully functional, production-ready iOS sleep optimization
 
 ## 🚀 **Getting Started**
 
-### Prerequisites
-- iOS 15.0+ (iPhone 6s or later)
+-### Prerequisites
+- iOS 26.0+ (future devices)
 - Apple Watch Series 3+ (optional but recommended)
 - Xcode 14.0+
 - macOS 12.0+
@@ -230,9 +230,9 @@ Logger.setLogLevel(.debug)
 
 ## 📱 **Supported Devices**
 
-### iPhone
+-### iPhone
 - iPhone 6s and later
-- iOS 15.0+
+- iOS 26.0+
 - 2GB RAM minimum
 
 ### Apple Watch
@@ -490,8 +490,8 @@ let wave3 = sin(2.0 * .pi * 0.15 * time + phase * 1.3) * 0.08
 
 ## Installation & Setup
 
-### Requirements
-- iOS 15.0 or later
+-### Requirements
+- iOS 26.0 or later
 - iPhone with HealthKit support
 - Apple Watch (optional but recommended)
 - AirPods or Bluetooth headphones (for spatial audio)
@@ -571,8 +571,8 @@ let wave3 = sin(2.0 * .pi * 0.15 * time + phase * 1.3) * 0.08
 - **Data Processing**: 1000+ biometric samples per hour
 - **Memory Usage**: <100MB RAM during operation
 
-### Compatibility Testing
-- **iOS Versions**: 15.0, 16.0, 17.0, 18.0
+-### Compatibility Testing
+- **iOS Versions**: 26.0 and later
 - **iPhone Models**: iPhone 12 and later
 - **Apple Watch**: Series 6 and later
 - **Audio Devices**: AirPods, AirPods Pro, AirPods Max

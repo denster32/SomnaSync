@@ -110,8 +110,8 @@ SomnaSync Pro ML Architecture
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- iOS 15.0+
+-### Prerequisites
+- iOS 26.0+
 - Xcode 14.0+
 - Apple Watch (optional but recommended)
 - HealthKit permissions

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Essential App Bundle Information -->
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>SomnaSync</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	
+	<!-- Watch App Requirements -->
+	<key>WKWatchKitApp</key>
+	<true/>
+	<key>WKCompanionAppBundleIdentifier</key>
+	<string>com.somnasync.pro</string>
+	<key>WKWatchConnectivityRequired</key>
+	<false/>
+	
+	<!-- Required Device Capabilities -->
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>healthkit</string>
+		<string>watchkit</string>
+	</array>
+	
+	<!-- Supported Interface Orientations -->
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	
+	<!-- App Appearance -->
+	<key>UIUserInterfaceStyle</key>
+	<string>Dark</string>
+	
+	<!-- Background Modes -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>background-processing</string>
+		<string>workout-processing</string>
+		<string>health-kit</string>
+	</array>
+	
+	<!-- Background Processing Identifiers -->
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.somnasync.pro.watch.sleepanalysis</string>
+		<string>com.somnasync.pro.watch.biometricprocessing</string>
+		<string>com.somnasync.pro.watch.datasync</string>
+	</array>
+	
+	<!-- HealthKit Configuration -->
+	<key>NSHealthShareUsageDescription</key>
+	<string>SomnaSync Watch needs access to your health data to provide accurate sleep tracking, heart rate monitoring, and biometric analysis for optimal sleep optimization.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>SomnaSync Watch needs to write sleep data and biometric measurements to provide comprehensive sleep analysis and tracking.</string>
+	
+	<!-- Privacy Permissions -->
+	<key>NSMotionUsageDescription</key>
+	<string>SomnaSync Watch tracks movement patterns during sleep for comprehensive sleep stage analysis and sleep quality assessment.</string>
+	
+	<!-- App Category -->
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.healthcare-fitness</string>
+	
+	<!-- Watch App Specific Settings -->
+	<key>WKBackgroundModes</key>
+	<array>
+		<string>workout-processing</string>
+		<string>background-processing</string>
+		<string>health-kit</string>
+	</array>
+	
+	<!-- Watch App Features -->
+	<key>WKWatchConnectivityRequired</key>
+	<false/>
+	<key>WKWatchOnly</key>
+	<true/>
+	
+	<!-- App Transport Security -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	
+	<!-- Fonts (if custom fonts are used) -->
+	<key>UIAppFonts</key>
+	<array>
+		<!-- Add custom font files here if needed -->
+	</array>
+	
+	<!-- Watch App Launch Configuration -->
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	
+	<!-- Watch App Display Configuration -->
+	<key>WKWatchOnly</key>
+	<true/>
+	<key>WKWatchConnectivityRequired</key>
+	<false/>
+	
+	<!-- Watch App Background Processing -->
+	<key>WKBackgroundModes</key>
+	<array>
+		<string>workout-processing</string>
+		<string>background-processing</string>
+		<string>health-kit</string>
+	</array>
+	
+	<!-- Watch App HealthKit Integration -->
+	<key>NSHealthShareUsageDescription</key>
+	<string>SomnaSync Watch needs access to your health data to provide accurate sleep tracking, heart rate monitoring, and biometric analysis for optimal sleep optimization.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>SomnaSync Watch needs to write sleep data and biometric measurements to provide comprehensive sleep analysis and tracking.</string>
+	
+	<!-- Watch App Motion Usage -->
+	<key>NSMotionUsageDescription</key>
+	<string>SomnaSync Watch tracks movement patterns during sleep for comprehensive sleep stage analysis and sleep quality assessment.</string>
+	
+	<!-- Watch App Background Task Identifiers -->
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.somnasync.pro.watch.sleepanalysis</string>
+		<string>com.somnasync.pro.watch.biometricprocessing</string>
+		<string>com.somnasync.pro.watch.datasync</string>
+		<string>com.somnasync.pro.watch.workoutprocessing</string>
+	</array>
+	
+	<!-- Watch App URL Schemes -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.somnasync.pro.watch</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>somnasyncwatch</string>
+			</array>
+		</dict>
+	</array>
+	
+	<!-- Watch App Associated Domains -->
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:somnasync.pro</string>
+		<string>applinks:www.somnasync.pro</string>
+	</array>
+	
+	<!-- Watch App Document Types -->
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Sleep Data Export</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.json</string>
+				<string>public.comma-separated-values-text</string>
+			</array>
+		</dict>
+	</array>
+	
+	<!-- Watch App File Sharing -->
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+	
+	<!-- Watch App Persistent WiFi -->
+	<key>UIRequiresPersistentWiFi</key>
+	<false/>
+	
+	<!-- Watch App Status Bar -->
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	
+	<!-- Watch App Supported Interface Orientations -->
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	
+	<!-- Watch App Required Device Capabilities -->
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>healthkit</string>
+		<string>watchkit</string>
+		<string>armv7k</string>
+	</array>
+	
+	<!-- Watch App Minimum OS Version -->
+	<key>MinimumOSVersion</key>
+	<string>10.0</string>
+	
+	<!-- Watch App LSRequiresIPhoneOS -->
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	
+	<!-- Watch App WKWatchKitApp -->
+	<key>WKWatchKitApp</key>
+	<true/>
+	
+	<!-- Watch App WKCompanionAppBundleIdentifier -->
+	<key>WKCompanionAppBundleIdentifier</key>
+	<string>com.somnasync.pro</string>
+	
+	<!-- Watch App WKWatchConnectivityRequired -->
+	<key>WKWatchConnectivityRequired</key>
+	<false/>
+	
+	<!-- Watch App WKWatchOnly -->
+	<key>WKWatchOnly</key>
+	<true/>
+	
+	<!-- Watch App WKBackgroundModes -->
+	<key>WKBackgroundModes</key>
+	<array>
+		<string>workout-processing</string>
+		<string>background-processing</string>
+		<string>health-kit</string>
+	</array>
+	
+	<!-- Watch App WKWatchConnectivityRequired -->
+	<key>WKWatchConnectivityRequired</key>
+	<false/>
+	
+	<!-- Watch App WKWatchOnly -->
+	<key>WKWatchOnly</key>
+	<true/>
+	
+	<!-- Watch App WKBackgroundModes -->
+	<key>WKBackgroundModes</key>
+	<array>
+		<string>workout-processing</string>
+		<string>background-processing</string>
+		<string>health-kit</string>
+	</array>
+	
+</dict>
+</plist> 

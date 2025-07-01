@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1B2C3D4012345678901234 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D5012345678901234 /* AppConfiguration.swift */; };
+		A1B2C3D6012345678901235 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D7012345678901235 /* AppDelegate.swift */; };
+		A1B2C3D8012345678901236 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D9012345678901236 /* SceneDelegate.swift */; };
+		A1B2C3DA12345678901237 /* SleepManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3DB12345678901237 /* SleepManager.swift */; };
+		A1B2C3DC12345678901238 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3DD12345678901238 /* HealthKitManager.swift */; };
+		A1B2C3DE12345678901239 /* AppleWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3DF12345678901239 /* AppleWatchManager.swift */; };
+		A1B2C3E012345678901240 /* AISleepAnalysisEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3E112345678901240 /* AISleepAnalysisEngine.swift */; };
+		A1B2C3E212345678901241 /* AudioGenerationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3E312345678901241 /* AudioGenerationEngine.swift */; };
+		A1B2C3E412345678901242 /* SmartAlarmSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3E512345678901242 /* SmartAlarmSystem.swift */; };
+		A1B2C3E612345678901243 /* SleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3E712345678901243 /* SleepView.swift */; };
+		A1B2C3E812345678901244 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3E912345678901244 /* DataManager.swift */; };
+		A1B2C3EA12345678901245 /* SleepStagePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3EB12345678901245 /* SleepStagePredictor.swift */; };
+		A1B2C3EE12345678901247 /* SomnaSyncWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3EF12345678901247 /* SomnaSyncWatchApp.swift */; };
+		A1B2C3F012345678901248 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3F112345678901248 /* Images.xcassets */; };
+		A1B2C3F212345678901249 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3F312345678901249 /* LaunchScreen.storyboard */; };
+		A1B2C3F612345678901253 /* AdvancedBatteryOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3F712345678901254 /* AdvancedBatteryOptimizer.swift */; };
+		A1B2C3F812345678901255 /* AdvancedBiofeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3F912345678901256 /* AdvancedBiofeedback.swift */; };
+		A1B2C3FA12345678901257 /* AdvancedCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3FB12345678901258 /* AdvancedCompression.swift */; };
+		A1B2C3FC12345678901259 /* AdvancedMemoryCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3FD12345678901260 /* AdvancedMemoryCompression.swift */; };
+		A1B2C3FE12345678901261 /* AdvancedMemoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3FF12345678901262 /* AdvancedMemoryManager.swift */; };
+		A1B2C40012345678901263 /* AdvancedMetalOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C40112345678901264 /* AdvancedMetalOptimizer.swift */; };
+		A1B2C40212345678901265 /* AdvancedNetworkOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C40312345678901266 /* AdvancedNetworkOptimizer.swift */; };
+		A1B2C40412345678901267 /* AdvancedSleepAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C40512345678901268 /* AdvancedSleepAnalytics.swift */; };
+		A1B2C40612345678901269 /* AdvancedStartupOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C40712345678901270 /* AdvancedStartupOptimizer.swift */; };
+		A1B2C40812345678901271 /* AdvancedUIRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C40912345678901272 /* AdvancedUIRenderer.swift */; };
+		A1B2C40A12345678901273 /* EnhancedAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C40B12345678901274 /* EnhancedAudioEngine.swift */; };
+		A1B2C40C12345678901275 /* EnvironmentalMonitoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C40D12345678901276 /* EnvironmentalMonitoring.swift */; };
+		A1B2C40E12345678901277 /* LiveAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C40F12345678901278 /* LiveAnalytics.swift */; };
+		A1B2C41012345678901279 /* MemoryCompressionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C41112345678901280 /* MemoryCompressionManager.swift */; };
+		A1B2C41212345678901281 /* MemoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C41312345678901282 /* MemoryMonitor.swift */; };
+		A1B2C41412345678901283 /* NeuralEngineOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C41512345678901284 /* NeuralEngineOptimizer.swift */; };
+		A1B2C41612345678901285 /* OptimizedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C41712345678901286 /* OptimizedDataManager.swift */; };
+		A1B2C41812345678901287 /* PerformanceOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C41912345678901288 /* PerformanceOptimizer.swift */; };
+		A1B2C41A12345678901289 /* PredictiveCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C41B12345678901290 /* PredictiveCacheManager.swift */; };
+		A1B2C41C12345678901291 /* PredictiveHealthInsights.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C41D12345678901292 /* PredictiveHealthInsights.swift */; };
+		A1B2C41E12345678901293 /* PredictiveUIRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C41F12345678901294 /* PredictiveUIRenderer.swift */; };
+		A1B2C42012345678901295 /* RealTimeAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C42112345678901296 /* RealTimeAnalytics.swift */; };
+		A1B2C42212345678901297 /* WindDownManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C42312345678901298 /* WindDownManager.swift */; };
+		A1B2C42412345678901299 /* AdvancedUIInteractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C42512345678901300 /* AdvancedUIInteractions.swift */; };
+		A1B2C42612345678901301 /* EnhancedAudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C42712345678901302 /* EnhancedAudioView.swift */; };
+		A1B2C42812345678901303 /* EnhancedSleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C42912345678901304 /* EnhancedSleepView.swift */; };
+		A1B2C42A12345678901305 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C42B12345678901306 /* OnboardingView.swift */; };
+		A1B2C42C12345678901307 /* PerformanceOptimizedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C42D12345678901308 /* PerformanceOptimizedViews.swift */; };
+		A1B2C42E12345678901309 /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C42F12345678901310 /* UIComponents.swift */; };
+		A1B2C43012345678901311 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C43112345678901312 /* DataModels.swift */; };
+		A1B2C43212345678901313 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C43312345678901314 /* Logger.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A1B2C3D5012345678901234 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppConfiguration.swift; path = ../AppConfiguration.swift; sourceTree = "<group>"; };
+		A1B2C3D7012345678901235 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
+		A1B2C3D9012345678901236 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../SceneDelegate.swift; sourceTree = "<group>"; };
+		A1B2C3DB12345678901237 /* SleepManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SleepManager.swift; path = ../Managers/SleepManager.swift; sourceTree = "<group>"; };
+		A1B2C3DD12345678901238 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthKitManager.swift; path = ../Managers/HealthKitManager.swift; sourceTree = "<group>"; };
+		A1B2C3DF12345678901239 /* AppleWatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppleWatchManager.swift; path = ../Managers/AppleWatchManager.swift; sourceTree = "<group>"; };
+		A1B2C3E112345678901240 /* AISleepAnalysisEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AISleepAnalysisEngine.swift; path = ../Services/AISleepAnalysisEngine.swift; sourceTree = "<group>"; };
+		A1B2C3E312345678901241 /* AudioGenerationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioGenerationEngine.swift; path = ../Services/AudioGenerationEngine.swift; sourceTree = "<group>"; };
+		A1B2C3E512345678901242 /* SmartAlarmSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SmartAlarmSystem.swift; path = ../Services/SmartAlarmSystem.swift; sourceTree = "<group>"; };
+		A1B2C3E712345678901243 /* SleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SleepView.swift; path = ../Views/SleepView.swift; sourceTree = "<group>"; };
+		A1B2C3E912345678901244 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = ../ML/DataManager.swift; sourceTree = "<group>"; };
+		A1B2C3EB12345678901245 /* SleepStagePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SleepStagePredictor.swift; path = ../ML/SleepStagePredictor.swift; sourceTree = "<group>"; };
+		A1B2C3EF12345678901247 /* SomnaSyncWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SomnaSyncWatchApp.swift; path = ../WatchApp/SomnaSyncWatchApp.swift; sourceTree = "<group>"; };
+		A1B2C3F112345678901248 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
+		A1B2C3F312345678901249 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SomnaSync/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A1B2C3F712345678901254 /* AdvancedBatteryOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvancedBatteryOptimizer.swift; path = ../Services/AdvancedBatteryOptimizer.swift; sourceTree = "<group>"; };
+		A1B2C3F912345678901256 /* AdvancedBiofeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvancedBiofeedback.swift; path = ../Services/AdvancedBiofeedback.swift; sourceTree = "<group>"; };
+		A1B2C3FB12345678901258 /* AdvancedCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvancedCompression.swift; path = ../Services/AdvancedCompression.swift; sourceTree = "<group>"; };
+		A1B2C3FD12345678901260 /* AdvancedMemoryCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvancedMemoryCompression.swift; path = ../Services/AdvancedMemoryCompression.swift; sourceTree = "<group>"; };
+		A1B2C3FF12345678901262 /* AdvancedMemoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvancedMemoryManager.swift; path = ../Services/AdvancedMemoryManager.swift; sourceTree = "<group>"; };
+		A1B2C40112345678901264 /* AdvancedMetalOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvancedMetalOptimizer.swift; path = ../Services/AdvancedMetalOptimizer.swift; sourceTree = "<group>"; };
+		A1B2C40312345678901266 /* AdvancedNetworkOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvancedNetworkOptimizer.swift; path = ../Services/AdvancedNetworkOptimizer.swift; sourceTree = "<group>"; };
+		A1B2C40512345678901268 /* AdvancedSleepAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvancedSleepAnalytics.swift; path = ../Services/AdvancedSleepAnalytics.swift; sourceTree = "<group>"; };
+		A1B2C40712345678901270 /* AdvancedStartupOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvancedStartupOptimizer.swift; path = ../Services/AdvancedStartupOptimizer.swift; sourceTree = "<group>"; };
+		A1B2C40912345678901272 /* AdvancedUIRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvancedUIRenderer.swift; path = ../Services/AdvancedUIRenderer.swift; sourceTree = "<group>"; };
+		A1B2C40B12345678901274 /* EnhancedAudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EnhancedAudioEngine.swift; path = ../Services/EnhancedAudioEngine.swift; sourceTree = "<group>"; };
+		A1B2C40D12345678901276 /* EnvironmentalMonitoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EnvironmentalMonitoring.swift; path = ../Services/EnvironmentalMonitoring.swift; sourceTree = "<group>"; };
+		A1B2C40F12345678901278 /* LiveAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LiveAnalytics.swift; path = ../Services/LiveAnalytics.swift; sourceTree = "<group>"; };
+		A1B2C41112345678901280 /* MemoryCompressionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MemoryCompressionManager.swift; path = ../Services/MemoryCompressionManager.swift; sourceTree = "<group>"; };
+		A1B2C41312345678901282 /* MemoryMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MemoryMonitor.swift; path = ../Services/MemoryMonitor.swift; sourceTree = "<group>"; };
+		A1B2C41512345678901284 /* NeuralEngineOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NeuralEngineOptimizer.swift; path = ../Services/NeuralEngineOptimizer.swift; sourceTree = "<group>"; };
+		A1B2C41712345678901286 /* OptimizedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OptimizedDataManager.swift; path = ../Services/OptimizedDataManager.swift; sourceTree = "<group>"; };
+		A1B2C41912345678901288 /* PerformanceOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PerformanceOptimizer.swift; path = ../Services/PerformanceOptimizer.swift; sourceTree = "<group>"; };
+		A1B2C41B12345678901290 /* PredictiveCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PredictiveCacheManager.swift; path = ../Services/PredictiveCacheManager.swift; sourceTree = "<group>"; };
+		A1B2C41D12345678901292 /* PredictiveHealthInsights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PredictiveHealthInsights.swift; path = ../Services/PredictiveHealthInsights.swift; sourceTree = "<group>"; };
+		A1B2C41F12345678901294 /* PredictiveUIRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PredictiveUIRenderer.swift; path = ../Services/PredictiveUIRenderer.swift; sourceTree = "<group>"; };
+		A1B2C42112345678901296 /* RealTimeAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealTimeAnalytics.swift; path = ../Services/RealTimeAnalytics.swift; sourceTree = "<group>"; };
+		A1B2C42312345678901298 /* WindDownManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WindDownManager.swift; path = ../Services/WindDownManager.swift; sourceTree = "<group>"; };
+		A1B2C42512345678901300 /* AdvancedUIInteractions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvancedUIInteractions.swift; path = ../Views/AdvancedUIInteractions.swift; sourceTree = "<group>"; };
+		A1B2C42712345678901302 /* EnhancedAudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EnhancedAudioView.swift; path = ../Views/EnhancedAudioView.swift; sourceTree = "<group>"; };
+		A1B2C42912345678901304 /* EnhancedSleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EnhancedSleepView.swift; path = ../Views/EnhancedSleepView.swift; sourceTree = "<group>"; };
+		A1B2C42B12345678901306 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = ../Views/OnboardingView.swift; sourceTree = "<group>"; };
+		A1B2C42D12345678901308 /* PerformanceOptimizedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PerformanceOptimizedViews.swift; path = ../Views/PerformanceOptimizedViews.swift; sourceTree = "<group>"; };
+		A1B2C42F12345678901310 /* UIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIComponents.swift; path = ../Views/UIComponents.swift; sourceTree = "<group>"; };
+		A1B2C43112345678901312 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataModels.swift; path = ../Models/DataModels.swift; sourceTree = "<group>"; };
+		A1B2C43312345678901314 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = ../Logger.swift; sourceTree = "<group>"; };
+		C3416C4F2E130F03001EC03A /* SomnaSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomnaSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1B2C3FA12345678901253 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3416C4D2E130F03001EC03A /* SomnaSync.xcodeproj */ = {
+			isa = PBXGroup;
+			children = (
+				C3416C4E2E130F03001EC03A /* Recovered References */,
+				C3416C502E130F03001EC03A /* Products */,
+			);
+			path = "";
+			sourceTree = "<group>";
+		};
+		C3416C4E2E130F03001EC03A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D5012345678901234 /* AppConfiguration.swift */,
+				A1B2C3D7012345678901235 /* AppDelegate.swift */,
+				A1B2C3D9012345678901236 /* SceneDelegate.swift */,
+				A1B2C3DB12345678901237 /* SleepManager.swift */,
+				A1B2C3DD12345678901238 /* HealthKitManager.swift */,
+				A1B2C3DF12345678901239 /* AppleWatchManager.swift */,
+				A1B2C3E112345678901240 /* AISleepAnalysisEngine.swift */,
+				A1B2C3E312345678901241 /* AudioGenerationEngine.swift */,
+				A1B2C3E512345678901242 /* SmartAlarmSystem.swift */,
+				A1B2C3E712345678901243 /* SleepView.swift */,
+				A1B2C3E912345678901244 /* DataManager.swift */,
+				A1B2C3EB12345678901245 /* SleepStagePredictor.swift */,
+				A1B2C3EF12345678901247 /* SomnaSyncWatchApp.swift */,
+				A1B2C3F712345678901254 /* AdvancedBatteryOptimizer.swift */,
+				A1B2C3F912345678901256 /* AdvancedBiofeedback.swift */,
+				A1B2C3FB12345678901258 /* AdvancedCompression.swift */,
+				A1B2C3FD12345678901260 /* AdvancedMemoryCompression.swift */,
+				A1B2C3FF12345678901262 /* AdvancedMemoryManager.swift */,
+				A1B2C40112345678901264 /* AdvancedMetalOptimizer.swift */,
+				A1B2C40312345678901266 /* AdvancedNetworkOptimizer.swift */,
+				A1B2C40512345678901268 /* AdvancedSleepAnalytics.swift */,
+				A1B2C40712345678901270 /* AdvancedStartupOptimizer.swift */,
+				A1B2C40912345678901272 /* AdvancedUIRenderer.swift */,
+				A1B2C40B12345678901274 /* EnhancedAudioEngine.swift */,
+				A1B2C40D12345678901276 /* EnvironmentalMonitoring.swift */,
+				A1B2C40F12345678901278 /* LiveAnalytics.swift */,
+				A1B2C41112345678901280 /* MemoryCompressionManager.swift */,
+				A1B2C41312345678901282 /* MemoryMonitor.swift */,
+				A1B2C41512345678901284 /* NeuralEngineOptimizer.swift */,
+				A1B2C41712345678901286 /* OptimizedDataManager.swift */,
+				A1B2C41912345678901288 /* PerformanceOptimizer.swift */,
+				A1B2C41B12345678901290 /* PredictiveCacheManager.swift */,
+				A1B2C41D12345678901292 /* PredictiveHealthInsights.swift */,
+				A1B2C41F12345678901294 /* PredictiveUIRenderer.swift */,
+				A1B2C42112345678901296 /* RealTimeAnalytics.swift */,
+				A1B2C42312345678901298 /* WindDownManager.swift */,
+				A1B2C42512345678901300 /* AdvancedUIInteractions.swift */,
+				A1B2C42712345678901302 /* EnhancedAudioView.swift */,
+				A1B2C42912345678901304 /* EnhancedSleepView.swift */,
+				A1B2C42B12345678901306 /* OnboardingView.swift */,
+				A1B2C42D12345678901308 /* PerformanceOptimizedViews.swift */,
+				A1B2C42F12345678901310 /* UIComponents.swift */,
+				A1B2C43112345678901312 /* DataModels.swift */,
+				A1B2C43312345678901314 /* Logger.swift */,
+				A1B2C3F312345678901249 /* LaunchScreen.storyboard */,
+				A1B2C3F112345678901248 /* Images.xcassets */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		C3416C502E130F03001EC03A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3416C4F2E130F03001EC03A /* SomnaSync.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1B2C40712345678901266 /* SomnaSync */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C40812345678901267 /* Build configuration list for PBXNativeTarget "SomnaSync" */;
+			buildPhases = (
+				A1B2C40912345678901268 /* Sources */,
+				A1B2C3FA12345678901253 /* Frameworks */,
+				A1B2C40A12345678901269 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SomnaSync;
+			productName = SomnaSync;
+			productReference = C3416C4F2E130F03001EC03A /* SomnaSync.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1B2C40B12345678901270 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A1B2C40712345678901266 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A1B2C40C12345678901271 /* Build configuration list for PBXProject "SomnaSync" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C3416C4D2E130F03001EC03A /* SomnaSync.xcodeproj */;
+			productRefGroup = C3416C502E130F03001EC03A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1B2C40712345678901266 /* SomnaSync */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1B2C40A12345678901269 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3F212345678901249 /* LaunchScreen.storyboard in Resources */,
+				A1B2C3F012345678901248 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1B2C40912345678901268 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4012345678901234 /* AppConfiguration.swift in Sources */,
+				A1B2C3D6012345678901235 /* AppDelegate.swift in Sources */,
+				A1B2C3D8012345678901236 /* SceneDelegate.swift in Sources */,
+				A1B2C3DA12345678901237 /* SleepManager.swift in Sources */,
+				A1B2C3DC12345678901238 /* HealthKitManager.swift in Sources */,
+				A1B2C3DE12345678901239 /* AppleWatchManager.swift in Sources */,
+				A1B2C3E012345678901240 /* AISleepAnalysisEngine.swift in Sources */,
+				A1B2C3E212345678901241 /* AudioGenerationEngine.swift in Sources */,
+				A1B2C3E412345678901242 /* SmartAlarmSystem.swift in Sources */,
+				A1B2C3E612345678901243 /* SleepView.swift in Sources */,
+				A1B2C3E812345678901244 /* DataManager.swift in Sources */,
+				A1B2C3EA12345678901245 /* SleepStagePredictor.swift in Sources */,
+				A1B2C3EE12345678901247 /* SomnaSyncWatchApp.swift in Sources */,
+				A1B2C3F612345678901253 /* AdvancedBatteryOptimizer.swift in Sources */,
+				A1B2C3F812345678901255 /* AdvancedBiofeedback.swift in Sources */,
+				A1B2C3FA12345678901257 /* AdvancedCompression.swift in Sources */,
+				A1B2C3FC12345678901259 /* AdvancedMemoryCompression.swift in Sources */,
+				A1B2C3FE12345678901261 /* AdvancedMemoryManager.swift in Sources */,
+				A1B2C40012345678901263 /* AdvancedMetalOptimizer.swift in Sources */,
+				A1B2C40212345678901265 /* AdvancedNetworkOptimizer.swift in Sources */,
+				A1B2C40412345678901267 /* AdvancedSleepAnalytics.swift in Sources */,
+				A1B2C40612345678901269 /* AdvancedStartupOptimizer.swift in Sources */,
+				A1B2C40812345678901271 /* AdvancedUIRenderer.swift in Sources */,
+				A1B2C40A12345678901273 /* EnhancedAudioEngine.swift in Sources */,
+				A1B2C40C12345678901275 /* EnvironmentalMonitoring.swift in Sources */,
+				A1B2C40E12345678901277 /* LiveAnalytics.swift in Sources */,
+				A1B2C41012345678901279 /* MemoryCompressionManager.swift in Sources */,
+				A1B2C41212345678901281 /* MemoryMonitor.swift in Sources */,
+				A1B2C41412345678901283 /* NeuralEngineOptimizer.swift in Sources */,
+				A1B2C41612345678901285 /* OptimizedDataManager.swift in Sources */,
+				A1B2C41812345678901287 /* PerformanceOptimizer.swift in Sources */,
+				A1B2C41A12345678901289 /* PredictiveCacheManager.swift in Sources */,
+				A1B2C41C12345678901291 /* PredictiveHealthInsights.swift in Sources */,
+				A1B2C41E12345678901293 /* PredictiveUIRenderer.swift in Sources */,
+				A1B2C42012345678901295 /* RealTimeAnalytics.swift in Sources */,
+				A1B2C42212345678901297 /* WindDownManager.swift in Sources */,
+				A1B2C42412345678901299 /* AdvancedUIInteractions.swift in Sources */,
+				A1B2C42612345678901301 /* EnhancedAudioView.swift in Sources */,
+				A1B2C42812345678901303 /* EnhancedSleepView.swift in Sources */,
+				A1B2C42A12345678901305 /* OnboardingView.swift in Sources */,
+				A1B2C42C12345678901307 /* PerformanceOptimizedViews.swift in Sources */,
+				A1B2C42E12345678901309 /* UIComponents.swift in Sources */,
+				A1B2C43012345678901311 /* DataModels.swift in Sources */,
+				A1B2C43212345678901313 /* Logger.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A1B2C40D12345678901272 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+                               IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1B2C40E12345678901273 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+                               IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1B2C40F12345678901274 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89VK5FATD6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SomnaSync/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.somnasync.pro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1B2C41012345678901275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89VK5FATD6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SomnaSync/Info.plist;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.somnasync.pro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1B2C40812345678901267 /* Build configuration list for PBXNativeTarget "SomnaSync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C40F12345678901274 /* Debug */,
+				A1B2C41012345678901275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B2C40C12345678901271 /* Build configuration list for PBXProject "SomnaSync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C40D12345678901272 /* Debug */,
+				A1B2C40E12345678901273 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1B2C40B12345678901270 /* Project object */;
+}

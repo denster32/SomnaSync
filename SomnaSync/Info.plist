@@ -59,8 +59,8 @@
 	<true/>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
-	<key>MinimumOSVersion</key>
-	<string>15.0</string>
+       <key>MinimumOSVersion</key>
+       <string>26.0</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>

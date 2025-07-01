@@ -290,60 +290,90 @@ class NeuralEngineOptimizer: ObservableObject {
 // MARK: - Supporting Classes
 
 class NeuralEngine {
+    private var utilizationTarget: Double = 0.8
+    private var efficiency: Double = 0.85
+
+    /// Perform simple utilization tuning. In a real implementation this would
+    /// interact with Metal Performance Shaders or Core ML APIs.
     func optimizeUtilization() async {
-        // Optimize Neural Engine utilization
+        // Simulate async optimization work
+        try? await Task.sleep(nanoseconds: 50_000_000)
+        efficiency = min(0.95, efficiency + 0.05)
     }
-    
+
+    func setTargetUtilization(_ value: Double) {
+        utilizationTarget = min(max(0.0, value), 1.0)
+    }
+
     func getUtilizationEfficiency() -> Double {
-        return 0.85
+        return efficiency * utilizationTarget
     }
 }
 
 class ModelCompiler {
+    private var compiledCount: Int = 0
+    private let queue = DispatchQueue(label: "com.somnasync.compiler")
+
     func setupCompilationPipeline() {
-        // Setup model compilation pipeline
+        // In a real implementation this would preload resources needed for
+        // model compilation.
     }
-    
+
     func optimizeCompilation() async {
-        // Optimize model compilation
+        // Simulate asynchronous optimization work
+        try? await Task.sleep(nanoseconds: 30_000_000)
     }
-    
+
     func compileModel(_ model: MLModel, name: String) async -> MLModel? {
-        // Compile model for Neural Engine
+        // Normally we would compile the model to a .mlmodelc bundle.
+        // Here we simply track how many models were "compiled".
+        queue.sync { compiledCount += 1 }
         return model
     }
-    
+
     func getCompilationEfficiency() -> Double {
-        return 0.9
+        // Efficiency grows as more models are compiled, capped at 1.0
+        let target = 10
+        return min(1.0, Double(compiledCount) / Double(target))
     }
 }
 
 class NeuralPerformanceOptimizer {
+    private var efficiency: Double = 0.88
+
     func optimizeModel(_ model: MLModel, name: String) async {
-        // Optimize model performance
+        // Simulate model-specific optimization work
+        try? await Task.sleep(nanoseconds: 20_000_000)
+        efficiency = min(1.0, efficiency + 0.02)
     }
-    
+
     func optimizePerformance() async {
-        // Optimize overall performance
+        // Overall tuning across models
+        try? await Task.sleep(nanoseconds: 10_000_000)
     }
-    
+
     func getPerformanceEfficiency() -> Double {
-        return 0.88
+        return efficiency
     }
 }
 
 class ModelQuantizationManager {
+    private var efficiency: Double = 0.92
+
     func optimizeQuantization() async {
-        // Optimize model quantization
+        // Simulate quantization pipeline tuning
+        try? await Task.sleep(nanoseconds: 25_000_000)
     }
-    
+
     func quantizeModel(_ model: MLModel, name: String) async -> MLModel? {
-        // Quantize model for better performance
+        // A real implementation would convert weights to a lower precision.
+        try? await Task.sleep(nanoseconds: 25_000_000)
+        efficiency = min(1.0, efficiency + 0.03)
         return model
     }
-    
+
     func getQuantizationEfficiency() -> Double {
-        return 0.92
+        return efficiency
     }
 }
 
@@ -411,4 +441,11 @@ extension NeuralEngineOptimizer {
         await configureNeuralEngine(utilization: utilization)
         Logger.info("Neural Engine adjusted to \(utilization * 100)% for \(priority) priority", log: .performance)
     }
-} 
+
+    private func configureNeuralEngine(utilization: Double) async {
+        neuralEngine?.setTargetUtilization(utilization)
+        await neuralEngine?.optimizeUtilization()
+        neuralEngineUtilization = utilization
+        neuralStats.optimizationCount += 1
+    }
+}

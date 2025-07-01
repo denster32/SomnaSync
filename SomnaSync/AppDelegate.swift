@@ -116,7 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Private Methods
     private func configureAppAppearance() {
         // Configure global app appearance
-        if #available(iOS 15.0, *) {
+        if #available(iOS 26.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = UIColor.systemBackground

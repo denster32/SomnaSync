@@ -779,7 +779,7 @@ struct AppConfiguration {
     static let bundleIdentifier = "com.somnasync.pro"
     static let version = "1.0.0"
     static let buildNumber = "1"
-    static let minimumOSVersion = "15.0"
+    static let minimumOSVersion = "26.0"
     
     // MARK: - Apple Watch Configuration
     static let companionAppBundleId = "com.somnasync.pro.watchapp"
