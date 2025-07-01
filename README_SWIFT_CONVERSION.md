@@ -120,27 +120,33 @@ SomnaSync Pro ML Architecture
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/SomnaSync-Pro-Xcode-Complete.git
+   git clone https://github.com/<your-github-username>/SomnaSync.git
+   cd SomnaSync
+   ```
+
+2. **Unzip the project files**
+   ```bash
+   unzip SomnaSync-Pro-Xcode-Complete.zip
    cd SomnaSync-Pro-Xcode-Complete
    ```
 
-2. **Install Python dependencies** (for model training)
+3. **Install Python dependencies** (for model training)
    ```bash
    cd SomnaSync/ML
    pip install -r requirements.txt
    ```
 
-3. **Train the Core ML model**
+4. **Train the Core ML model**
    ```bash
    python train_sleep_model.py
    ```
 
-4. **Open in Xcode**
+5. **Open in Xcode**
    ```bash
    open SomnaSync.xcodeproj
    ```
 
-5. **Build and run**
+6. **Build and run**
    - Select your target device
    - Build the project (⌘+B)
    - Run the app (⌘+R)
