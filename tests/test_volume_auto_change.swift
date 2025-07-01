@@ -7,10 +7,10 @@ class MockAudioEngine {
     var volume: Float = 0.5
     var autoChangeEnabled: Bool = true
 
-    // Simulates volume update logic with a known bug.
+    // Simulates volume update logic with a fixed bug.
     func setVolume(_ newVolume: Float, immediate: Bool) {
         if autoChangeEnabled && immediate {
-            // BUG: Volume should update immediately but does not.
+            volume = newVolume
             return
         }
         volume = newVolume

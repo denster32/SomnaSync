@@ -55,16 +55,18 @@ class AppleWatchManager: NSObject, ObservableObject {
     private let syncInterval: TimeInterval = 15.0 // Faster sync with tolerance
     private let maxReconnectAttempts = 5
     private var reconnectAttempts = 0
+
+    private var healthKitAuthorized = false
+    private var healthKitQueriesStarted = false
     
     override init() {
         super.init()
         setupWatchConnectivity()
         setupHealthKit()
-        startBackgroundSync()
     }
     
     deinit {
-        stopBackgroundSync()
+        stopWatchDependentServices()
         invalidateTimers()
     }
     
@@ -114,7 +116,7 @@ class AppleWatchManager: NSObject, ObservableObject {
             DispatchQueue.main.async {
                 if success {
                     Logger.success("HealthKit permissions granted", log: Logger.watchManager)
-                    self?.startHealthKitQueries()
+                    self?.healthKitAuthorized = true
                 } else {
                     Logger.error("HealthKit permissions denied: \(error?.localizedDescription ?? "Unknown error")", log: Logger.watchManager)
                 }
@@ -372,6 +374,31 @@ class AppleWatchManager: NSObject, ObservableObject {
         syncTimer?.cancel()
         syncTimer = nil
     }
+
+    private func startHealthKitQueriesIfNeeded() {
+        guard healthKitAuthorized, !healthKitQueriesStarted else { return }
+        startHealthKitQueries()
+        healthKitQueriesStarted = true
+    }
+
+    private func stopHealthKitQueries() {
+        heartRateQuery = nil
+        hrvQuery = nil
+        bloodOxygenQuery = nil
+        movementQuery = nil
+        sleepSessionQuery = nil
+        healthKitQueriesStarted = false
+    }
+
+    private func startWatchDependentServices() {
+        startBackgroundSync()
+        startHealthKitQueriesIfNeeded()
+    }
+
+    private func stopWatchDependentServices() {
+        stopBackgroundSync()
+        stopHealthKitQueries()
+    }
     
     private func performBackgroundSync() {
         guard isWatchConnected else { return }
@@ -506,11 +533,14 @@ extension AppleWatchManager: WCSessionDelegate {
         DispatchQueue.main.async {
             self.isWatchConnected = activationState == .activated
             self.syncStatus = activationState == .activated ? .connected : .disconnected
-            
+
             if let error = error {
                 Logger.error("Watch session activation failed: \(error.localizedDescription)", log: Logger.watchManager)
             } else {
                 Logger.success("Watch session activated successfully", log: Logger.watchManager)
+                if activationState == .activated {
+                    self.startWatchDependentServices()
+                }
             }
         }
     }
@@ -520,7 +550,8 @@ extension AppleWatchManager: WCSessionDelegate {
             self.isWatchConnected = false
             self.syncStatus = .disconnected
         }
-        
+
+        stopWatchDependentServices()
         Logger.warning("Watch session became inactive", log: Logger.watchManager)
     }
     
@@ -529,7 +560,8 @@ extension AppleWatchManager: WCSessionDelegate {
             self.isWatchConnected = false
             self.syncStatus = .disconnected
         }
-        
+
+        stopWatchDependentServices()
         Logger.warning("Watch session deactivated", log: Logger.watchManager)
         
         // Reactivate the session

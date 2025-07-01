@@ -13,7 +13,9 @@ sync speed while reducing CPU overhead.
 - Added a dedicated background queue and `DispatchSourceTimer` with 5‑second leeway.
 - Reduced `syncInterval` from 30s to 15s for quicker data updates.
 - Timer cancellation now uses `DispatchSourceTimer.cancel()` for clean shutdown.
+- Background sync and HealthKit queries now start only when the watch is connected.
 
 ## Results
 - Simulated tests show ~12% lower average CPU usage during background sync.
 - Data latency from watch reduced from ~25s to ~10s.
+- Idle CPU usage reduced when watch is disconnected.
