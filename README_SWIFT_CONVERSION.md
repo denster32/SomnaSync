@@ -134,6 +134,9 @@ SomnaSync Pro ML Architecture
    ```bash
    cd SomnaSync/ML
    pip install -r requirements.txt
+   # Training uses Apple's Create ML, available only on macOS.
+   # This framework is not installed via pip; install Xcode or the
+   # Create ML tools on your Mac.
    ```
 
 4. **Train the Core ML model**

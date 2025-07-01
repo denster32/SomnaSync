@@ -85,6 +85,7 @@ SomnaSync Pro is now a fully functional, production-ready iOS sleep optimization
    ```bash
    cd SomnaSync/ML
    python3 train_sleep_model.py
+   # Requires Apple's Create ML framework (macOS only)
    ```
    - Copy the generated `SleepStagePredictor.mlmodel` to the ML folder in Xcode
 
