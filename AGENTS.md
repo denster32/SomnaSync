@@ -30,4 +30,17 @@ Welcome, Agents! You are empowered to work as a self-organizing team. Please fol
 
 ---
 
-If you encounter blockers or need clarification, document the issue in an Issue or in this file for team visibility. 
+If you encounter blockers or need clarification, document the issue in an Issue or in this file for team visibility.
+
+## Actionable Instructions (Spring 2024 Release)
+
+- **Performance:** Profile and optimize code in Managers and Utilities. Document findings and improvements.
+- **Functionality:** Expand test coverage and ensure all features are complete and accessible.
+- **iOS 26 Readiness:** Audit for deprecated APIs, adopt new features, and test on iOS 26 beta.
+- **Multi-Device:** Adapt and test UI for iPhone, iPad, and Apple Watch. Implement device-specific enhancements.
+
+**How to proceed:**
+1. Claim a task from the list above (update ASSIGNMENTS.md or open an Issue).
+2. Create a branch for your work (e.g., `agent1-performance-optim`).
+3. Work according to AGENTS.md guidelines.
+4. Open a PR when ready; peer review and merge without waiting for user approval. 
