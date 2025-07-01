@@ -17,7 +17,7 @@ struct OnboardingView: View {
     private let totalSteps = 4
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 // Background gradient
                 LinearGradient(

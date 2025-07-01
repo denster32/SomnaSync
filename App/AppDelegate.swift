@@ -126,8 +126,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         }
         
-        // Set status bar style
-        UIApplication.shared.statusBarStyle = .lightContent
+        // Status bar style is handled by `AppHostingController`
     }
     
     private func handleDeepLink(url: URL) {

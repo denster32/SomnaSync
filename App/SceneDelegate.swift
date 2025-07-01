@@ -11,9 +11,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents
         let contentView = ContentView()
         
-        // Use a UIHostingController as window root view controller
+        // Use a custom hosting controller to manage status bar appearance
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = UIHostingController(rootView: contentView)
+        window.rootViewController = AppHostingController(rootView: contentView)
         self.window = window
         window.makeKeyAndVisible()
         
