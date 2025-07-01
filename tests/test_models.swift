@@ -79,4 +79,18 @@ assert(audio1.displayName == "Binaural Beats (6Hz)")
 let audio2 = PreSleepAudioType.whiteNoise(color: .white)
 assert(audio2.displayName == "White Noise")
 
+// Edge cases
+let incompleteSession = SleepSession(startTime: start, endTime: nil, sleepStage: .awake, quality: 0.0, cycleCount: 0)
+assert(incompleteSession.duration == 0)
+
+let zeroFreqAudio = PreSleepAudioType.binauralBeats(frequency: 0.0)
+assert(zeroFreqAudio.displayName == "Binaural Beats (0Hz)")
+
+func normalizeHeartRate(_ hr: Double) -> Double {
+    return max(0, min(1, (hr - 40) / 60))
+}
+
+assert(normalizeHeartRate(30) == 0)
+assert(normalizeHeartRate(100) == 1)
+
 print("All tests passed")
