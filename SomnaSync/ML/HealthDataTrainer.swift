@@ -831,11 +831,28 @@ class OptimizedModelTrainer {
     }
     
     private func trainOptimizedModel(inputFeatures: [[Double]], labels: [Int]) -> MLModel? {
-        // Use Core ML's optimized training
-        // This is a simplified implementation - in practice, you'd use Core ML's training APIs
-        
-        // For now, return a placeholder model
-        return nil
+        guard inputFeatures.count == labels.count, !inputFeatures.isEmpty else { return nil }
+
+        do {
+            var rows: [MLDataTable.Row] = []
+            rows.reserveCapacity(labels.count)
+
+            for i in 0..<labels.count {
+                var dict: [String: MLDataValueConvertible] = [:]
+                for (index, value) in inputFeatures[i].enumerated() {
+                    dict["f\(index)"] = value
+                }
+                dict["label"] = labels[i]
+                rows.append(MLDataTable.Row(dict))
+            }
+
+            let table = try MLDataTable(rows: rows)
+            let classifier = try MLClassifier(trainingData: table, targetColumn: "label")
+            return classifier.model
+        } catch {
+            Logger.error("Model training failed: \(error.localizedDescription)", log: Logger.performance)
+            return nil
+        }
     }
     
     private func validateModelOptimized(model: MLModel?, validationData: [EngineeredFeature]) -> Float {
