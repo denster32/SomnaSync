@@ -1453,7 +1453,10 @@ class MoodTracker {
     }
     
     func getDailyHistory() async -> [MoodData] {
-        // Return daily mood history
+        if let data = UserDefaults.standard.data(forKey: "moodHistory"),
+           let moods = try? JSONDecoder().decode([MoodData].self, from: data) {
+            return moods.filter { Calendar.current.isDateInToday($0.timestamp) }
+        }
         return []
     }
 }
@@ -1465,7 +1468,10 @@ class StressAnalyzer {
     }
     
     func getDailyHistory() async -> [StressData] {
-        // Return daily stress history
+        if let data = UserDefaults.standard.data(forKey: "stressHistory"),
+           let items = try? JSONDecoder().decode([StressData].self, from: data) {
+            return items.filter { Calendar.current.isDateInToday($0.timestamp) }
+        }
         return []
     }
 }
