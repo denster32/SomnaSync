@@ -313,20 +313,18 @@ class AppleWatchManager: NSObject, ObservableObject {
             return
         }
         
-        do {
-            let messageData = try JSONEncoder().encode(message)
-            let messageDict = try JSONSerialization.jsonObject(with: messageData) as? [String: Any] ?? [:]
-            
-            session.sendMessage(messageDict, replyHandler: { [weak self] reply in
-                self?.handleWatchReply(reply)
-            }, errorHandler: { [weak self] error in
-                self?.handleWatchError(error)
-            })
-            
-            Logger.info("Message sent to watch: \(message.type)", log: Logger.watchManager)
-        } catch {
-            Logger.error("Failed to encode message: \(error.localizedDescription)", log: Logger.watchManager)
-        }
+        let messageDict: [String: Any] = [
+            "type": message.type.rawValue,
+            "data": message.data
+        ]
+
+        session.sendMessage(messageDict, replyHandler: { [weak self] reply in
+            self?.handleWatchReply(reply)
+        }, errorHandler: { [weak self] error in
+            self?.handleWatchError(error)
+        })
+
+        Logger.info("Message sent to watch: \(message.type)", log: Logger.watchManager)
     }
     
     func startSleepTracking() {
