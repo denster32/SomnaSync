@@ -49,6 +49,8 @@ class AppleWatchManager: NSObject, ObservableObject {
     private var syncTimer: DispatchSourceTimer?
     private let syncQueue = DispatchQueue(label: "com.somnasync.watchSync", qos: .background)
     private var reconnectTimer: Timer?
+    private var isSyncInProgress = false
+    private let syncLeeway: DispatchTimeInterval = .seconds(10)
     
     // MARK: - Configuration
     /// Interval for background sync operations
@@ -358,21 +360,23 @@ class AppleWatchManager: NSObject, ObservableObject {
     // MARK: - Background Sync
     
     private func startBackgroundSync() {
-        syncTimer?.cancel()
+        guard syncTimer == nil else { return }
         let timer = DispatchSource.makeTimerSource(queue: syncQueue)
         timer.schedule(deadline: .now() + syncInterval,
                        repeating: syncInterval,
-                       leeway: .seconds(5))
+                       leeway: syncLeeway)
         timer.setEventHandler { [weak self] in
             self?.performBackgroundSync()
         }
         syncTimer = timer
         timer.resume()
+        Logger.info("Background sync timer started", log: Logger.watchManager)
     }
 
     private func stopBackgroundSync() {
         syncTimer?.cancel()
         syncTimer = nil
+        Logger.info("Background sync timer stopped", log: Logger.watchManager)
     }
 
     private func startHealthKitQueriesIfNeeded() {
@@ -393,23 +397,35 @@ class AppleWatchManager: NSObject, ObservableObject {
     private func startWatchDependentServices() {
         startBackgroundSync()
         startHealthKitQueriesIfNeeded()
+        Logger.info("Started watch dependent services", log: Logger.watchManager)
     }
 
     private func stopWatchDependentServices() {
         stopBackgroundSync()
         stopHealthKitQueries()
+        Logger.info("Stopped watch dependent services", log: Logger.watchManager)
     }
     
     private func performBackgroundSync() {
         guard isWatchConnected else { return }
-        
+        guard !isSyncInProgress else {
+            Logger.debug("Sync already in progress", log: Logger.watchManager)
+            return
+        }
+
+        isSyncInProgress = true
+        let start = Date()
+        defer {
+            isSyncInProgress = false
+            let duration = Date().timeIntervalSince(start)
+            Logger.info("Background sync completed in \(duration)s", log: Logger.watchManager)
+        }
+
         // Request fresh biometric data
         requestBiometricData()
-        
+
         // Update battery level
         updateBatteryLevel()
-        
-        Logger.info("Background sync completed", log: Logger.watchManager)
     }
     
     private func updateBatteryLevel() {
@@ -463,6 +479,7 @@ class AppleWatchManager: NSObject, ObservableObject {
         }
         
         Logger.info("Watch reply received", log: Logger.watchManager)
+        isSyncInProgress = false
     }
     
     private func handleWatchError(_ error: Error) {
@@ -474,6 +491,7 @@ class AppleWatchManager: NSObject, ObservableObject {
         
         // Attempt to reconnect
         scheduleReconnect()
+        isSyncInProgress = false
     }
     
     private func handleBiometricData(_ data: [String: Any]) {
@@ -494,6 +512,7 @@ class AppleWatchManager: NSObject, ObservableObject {
             self.lastSyncTime = Date()
             self.syncStatus = .synced
         }
+        isSyncInProgress = false
     }
     
     private func scheduleReconnect() {
@@ -508,6 +527,7 @@ class AppleWatchManager: NSObject, ObservableObject {
         reconnectTimer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) { [weak self] _ in
             self?.attemptReconnect()
         }
+        Logger.info("Scheduled reconnect in \(delay)s", log: Logger.watchManager)
     }
     
     private func attemptReconnect() {
