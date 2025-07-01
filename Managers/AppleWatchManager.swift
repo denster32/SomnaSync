@@ -46,11 +46,13 @@ class AppleWatchManager: NSObject, ObservableObject {
     private var sleepSessionQuery: HKQuery?
     
     private var backgroundTask: UIBackgroundTaskIdentifier = .invalid
-    private var syncTimer: Timer?
+    private var syncTimer: DispatchSourceTimer?
+    private let syncQueue = DispatchQueue(label: "com.somnasync.watchSync", qos: .background)
     private var reconnectTimer: Timer?
     
     // MARK: - Configuration
-    private let syncInterval: TimeInterval = 30.0 // Sync every 30 seconds
+    /// Interval for background sync operations
+    private let syncInterval: TimeInterval = 15.0 // Faster sync with tolerance
     private let maxReconnectAttempts = 5
     private var reconnectAttempts = 0
     
@@ -354,13 +356,20 @@ class AppleWatchManager: NSObject, ObservableObject {
     // MARK: - Background Sync
     
     private func startBackgroundSync() {
-        syncTimer = Timer.scheduledTimer(withTimeInterval: syncInterval, repeats: true) { [weak self] _ in
+        syncTimer?.cancel()
+        let timer = DispatchSource.makeTimerSource(queue: syncQueue)
+        timer.schedule(deadline: .now() + syncInterval,
+                       repeating: syncInterval,
+                       leeway: .seconds(5))
+        timer.setEventHandler { [weak self] in
             self?.performBackgroundSync()
         }
+        syncTimer = timer
+        timer.resume()
     }
-    
+
     private func stopBackgroundSync() {
-        syncTimer?.invalidate()
+        syncTimer?.cancel()
         syncTimer = nil
     }
     
@@ -485,7 +494,7 @@ class AppleWatchManager: NSObject, ObservableObject {
     }
     
     private func invalidateTimers() {
-        syncTimer?.invalidate()
+        syncTimer?.cancel()
         reconnectTimer?.invalidate()
     }
 }

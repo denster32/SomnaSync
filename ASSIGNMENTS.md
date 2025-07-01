@@ -23,4 +23,7 @@
 ## Instructions
 - Each agent should work on their assigned task and area.
 - Update this table as assignments change.
-- Reference this file in issues, pull requests, or project boards for coordination. 
+- Reference this file in issues, pull requests, or project boards for coordination.
+
+### Current Task Claims
+- **Agent1**: Optimizing `AppleWatchManager` for faster sync and lower CPU usage.
