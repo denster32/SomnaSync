@@ -136,11 +136,13 @@ class SleepManager: ObservableObject {
     
     // MARK: - Sleep Stage Monitoring
     private func startMonitoring() {
-        timer = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true) { [weak self] _ in
             Task {
-                await self.updateSleepStage()
+                await self?.updateSleepStage()
             }
         }
+        // Allow the system to coalesce timer events for better efficiency
+        timer?.tolerance = 5.0
     }
     
     private func updateSleepStage() async {
